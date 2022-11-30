@@ -16,12 +16,16 @@ def get_matches_by_year(user_year):
 
     home = dic_fifa['home']
     away = dic_fifa['away']
+    home_icon = dic_fifa['home-icon']
+    away_icon = dic_fifa['away-icon']
     score = dic_fifa['score']
     year = dic_fifa['year']
 
     return render_template('search.html',
                            home=home,
                            away=away,
+                           home_icon=home_icon,
+                           away_icon=away_icon,
                            score=score,
                            year=year,
                            range=range,

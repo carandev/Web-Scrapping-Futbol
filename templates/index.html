@@ -5,15 +5,16 @@
   <title>Mundiales FIFA</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
 </head>
 
 <body>
-  <h1>Busca los resultados de los mundiales desde 1930</h1>
+  <h1>Busca los resultados de los mundiales desde 1930 - 2018</h1>
   <form>
-    <label for="year">Ingresa el año del mundial que deseas consultar:</label>
     <input type="text" name="year" placeholder="Año del mundial">
     <button type="submit">Buscar</button>
   </form>
+  <img src="{{url_for('static', filename='home.svg')}}" alt="">
 </body>
 
 <script>

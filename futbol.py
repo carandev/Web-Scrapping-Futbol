@@ -18,13 +18,20 @@ def get_matches(year):
     home = []
     score = []
     away = []
+    icon_home = []
+    icon_away = []
 
     for match in partido:
         home.append(match.find('th', {"class": 'fhome'}).get_text().strip())
         score.append(match.find('th', {"class": 'fscore'}).get_text().strip())
         away.append(match.find('th', {"class": 'faway'}).get_text().strip())
+        icon_home.append(match.find(
+            'th', {"class": 'fhome'}).find('img')['src'])
+        icon_away.append(match.find(
+            'th', {"class": 'faway'}).find('img')['src'])
 
-    matches = {'home': home, 'score': score, 'away': away}
+    matches = {'home': home, 'score': score, 'away': away,
+               'home-icon': icon_home, 'away-icon': icon_away}
     df_matches = pd.DataFrame(matches)
     df_matches['year'] = year
 
