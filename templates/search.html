@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Busca el mundial por año</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <h1>Partidos del año {{user_year}}</h1>
+  {%for i in range(len(home)) if year[i] == user_year%}
+  <div>
+    <p>{{year[i]}}</p>
+    <p>{{home[i]}}</p>
+    <p>{{score[i]}}</p>
+    <p>{{away[i]}}</p>
+  </div>
+  {% else %}
+  <section>
+    <h1>Año incorrecto</h1>
+    <a href="/">Prueba con otro año</a>
+  </section>
+  <img src="{{ url_for('static', filename='error.svg') }}" alt="">
+  {% endfor %}
+</body>
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+
+  div {
+    display: flex;
+    gap: 1rem;
+    width: 300px;
+    background-color: #00BFA6;
+  }
+</style>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Mundiales FIFA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <h1>Busca los resultados de los mundiales desde 1930</h1>
+  <form>
+    <label for="year">Ingresa el año del mundial que deseas consultar:</label>
+    <input type="text" name="year" placeholder="Año del mundial">
+    <button type="submit">Buscar</button>
+  </form>
+</body>
+
+<script>
+  const form = document.querySelector('form')
+
+  form.addEventListener('submit', event => {
+    event.preventDefault()
+    window.location.href = `/search/${form['year'].value}`
+  })
+</script>
+
+</html>
